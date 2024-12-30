@@ -1,17 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "How It Works", href: "#how-it-works" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Contact Us", href: "#contact" },
-  ];
+  const navLinks = useMemo(
+    () => [
+      { name: "Home", href: "#home" },
+      { name: "How It Works", href: "#how-it-works" },
+      { name: "Testimonials", href: "#testimonials" },
+      { name: "Pricing", href: "#pricing" },
+      { name: "Contact Us", href: "#contact" },
+    ],
+    []
+  ); // Empty dependency array since links don't change
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +37,7 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navLinks]);
 
   return (
     <nav className="w-full bg-white shadow-sm fixed top-0 left-0 right-0 z-50">

@@ -1,14 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Download,
-  Star,
-  Calendar,
-  Users,
-  Sparkles,
-  Apple,
-  Store,
-} from "lucide-react";
+import { Star, Calendar, Users, Sparkles, Apple, Store } from "lucide-react";
 
 const HeroSection = () => {
   const features = [
