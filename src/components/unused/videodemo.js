@@ -1,6 +1,6 @@
 import React from "react";
 import { Play, Star, Apple, Store } from "lucide-react";
-import FeatureHighlights from "./featureHighLights";
+import FeatureHighlights from "../featureHighLights";
 
 const VideoDemo = () => {
   return (
